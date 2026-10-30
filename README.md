@@ -18,7 +18,7 @@ My agent skills and global instructions for Claude Code and Codex.
 ## Install
 
 ```bash
-git clone git@github.com:devinpatell/dstack.git ~/workplace/dstack
+gh repo clone devinpatell/dstack ~/workplace/dstack
 ~/workplace/dstack/install.sh
 ```
 
