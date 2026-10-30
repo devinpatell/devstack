@@ -8,6 +8,7 @@ My agent skills and global instructions for Claude Code and Codex.
 |---|---|---|
 | `babysit-pr` | "babysit" (or automatic after `gh pr create`) | Watches a PR. Fixes CI and keeps the branch current on its own. Triages review feedback but acts only on written approval. Asks about auto-merge once, and reports when the PR is ready to merge. |
 | `better-call-sol` | "better call sol" | Reviews a change with GPT Sol in a loop until both agents agree. |
+| `dev-frontend-review` | "digest", "review #N", "note for #N", "visual check #N" | Drafts my frontend reviews for noor-basal/noor: a weekday digest of open PRs, re-review drafts, and the PR branch run next to its prototype. Posts nothing without my approval. Notes and drafts stay in `~/dev-review`, outside the repo. |
 | `leaving-pr-comments` | (automatic) | Formats and unslops comments posted on my behalf. |
 | `walkthrough` | "walk me through", "step by step" | Explains anything one step at a time in plain words, and waits for my explicit consent before each next step. |
 | `unslop` | `/unslop` | Removes AI writing patterns and padding from text, and keeps text written for me in my voice. |
@@ -32,7 +33,7 @@ Skill edits take effect right away, because the installed files are links. Run `
 ## Requirements
 
 - An authenticated `gh` and `jq`.
-- `python3` for `babysit-pr`'s `pr-wait` script.
+- `python3` for `babysit-pr`'s `pr-wait` script and the `dev-frontend-review` scripts.
 
 ## Credits
 
