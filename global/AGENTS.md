@@ -18,13 +18,13 @@ Never open a Midway-protected site (`*.amazon.dev`, `*.amazon.com`, `*.a2z.com`,
 A Lattice prototype (`lattice.dxd.amazon.dev/p/<slug>/...`) runs from its source:
 
 1. Find the package that holds the slug. Search `~/workplace` for the URL or the slug first: READMEs, `LOCAL-COPY.md` and `.lattice.json` files name it. Otherwise search code with builder-mcp `InternalCodeSearch` for `"lattice.dxd.amazon.dev/p/<slug>"` and read the matching docs for the package name.
-2. If `~/workplace/<Package>` exists, `git pull --ff-only` it. Otherwise `git clone ssh://git.amazon.com/pkg/<Package> ~/workplace/<Package>`.
+2. Check it out with the Brazil CLI. If `~/workplace/<Package>/src/<Package>` exists, `git pull --ff-only` there. Otherwise run `brazil ws create --root ~/workplace/<Package>`, then `brazil ws use -p <Package> --versionSet live` from that folder. The source lands in `src/<Package>`.
 3. Run it the way its README or `LOCAL-COPY.md` says. A static prototype with no instructions runs with `python3 -m http.server <port> --bind 127.0.0.1` in its folder.
 4. Open the localhost URL, with the Lattice URL's hash route, in the agent's browser. Stop the server when you're done.
 
 For any other Midway-protected page, read it with builder-mcp `ReadInternalWebsites`. If that can't read it, use `mcurl`.
 
-If a clone fails or `mcurl` returns 401, my Midway session has expired. Ask me to run `mwinit -f`, wait until I say it has run, then retry. Don't fall back to the browser.
+If a clone fails with "Could not resolve hostname git.amazon.com", ssh isn't going through WSSH. Check that `/usr/local/bin/wssh` exists and `~/.ssh/config` has the WSSH block. If either is missing, ask me to install WSSH from Self Service. Any other clone failure, or `mcurl` returning 401, means my Midway session has expired. Ask me to run `mwinit -f`. In both cases, wait until I say it's done, then retry. Don't fall back to the browser.
 
 ## Write without AI tells
 
