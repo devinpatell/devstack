@@ -107,15 +107,25 @@ not:
 For each new finding, read the cited code and decide yourself. Do not trust
 the bot's severity. Classify it:
 
-- **Fix:** a real bug in what the PR intends to do. Say what breaks and the
-  smallest fix.
+- **Fix:** a real defect: a bug in what the PR intends to do, a security
+  issue, or doc text that contradicts shipped behavior. Say what breaks and
+  the smallest fix.
 - **Optional:** correct but not needed: edge cases that do not matter, extra
   tests, small performance costs, style, extra compatibility. Recommend
-  declining unless it is cheap and clearly worth it.
+  rebutting it.
 - **Reject:** a false positive. Cite the code or behavior that shows it is
   wrong.
 - **Already handled:** fixed by a later commit, or a duplicate of another
   item.
+
+Only Fix items get changed. Recommend rebutting everything else with a short
+reason. Never recommend a follow-up PR or issue for an item you don't fix:
+the rebuttal is the whole answer. When a reviewer repeats a finding after a
+rebuttal, recommend a one-line reply that points back to it, not a fix.
+
+When the only things blocking the PR are a bot repeating a review that
+requests changes, or missing human approvals, tell the user and stop. More
+pushes would only start another bot round.
 
 Give each item a stable id (R1, R2, ...) that continues across triage rounds.
 Record the author, file:line, link, a one-line claim, the class, your
@@ -154,22 +164,21 @@ Then stop and let the user ask questions. Answer them, reading more code or
 running checks when that settles the question. Change nothing during the
 walkthrough. When the user is ready, record one decision for the item with
 the question tool: "Implement", "Implement differently" (the user says
-how), "Track as follow-up, not in this PR", or "Ignore". Then move to the
-next item.
+how), "Rebut", or "Ignore". Then move to the next item.
 
 After the last item, show a summary of all decisions and implement the
-approved ones together, as described below. List follow-ups in your report.
-Do not open issues or PRs for them unless the user asks.
+approved ones together, as described below. Do not open issues or PRs for
+items you don't fix unless the user asks.
 
 ### After approval
 
 Act only on the items the user approved, in the way they approved:
 
-- **Approved fix:** make the smallest change, prove it with the relevant
-  check or test, push, then reply on the thread with what changed and
-  resolve it.
-- **Approved reject, decline, or follow-up:** reply with the written reason
-  (for a follow-up, say it is tracked outside this PR), then resolve the
+- **Approved fixes:** make the smallest change for each, prove them with
+  the relevant checks or tests, and push them together once. Every push
+  starts another bot round and can dismiss approvals. Then reply on each
+  thread with what changed and resolve it.
+- **Approved rebuttal:** reply with the written reason, then resolve the
   thread.
 - **Not mentioned:** leave alone. Keep it open in the ledger and list it
   again in the next triage.

@@ -10,7 +10,7 @@ My agent skills and global instructions for Claude Code and Codex.
 | `better-call-sol` | "better call sol" | Reviews a change with GPT Sol in a loop until both agents agree. |
 | `leaving-pr-comments` | (automatic) | Formats and unslops comments posted on my behalf. |
 | `walkthrough` | "walk me through", "step by step" | Explains anything one step at a time in plain words, and waits for my explicit consent before each next step. |
-| `unslop` | `/unslop` | Removes AI writing patterns from text. |
+| `unslop` | `/unslop` | Removes AI writing patterns and padding from text, and keeps text written for me in my voice. |
 
 `global/AGENTS.md` holds the global instructions that go to every laptop. `install.sh` appends the rules from `skills/unslop/SKILL.md` to it and writes the result to `.generated/AGENTS.md`, so both tools apply unslop to every reply. Edit the rules only in the skill.
 

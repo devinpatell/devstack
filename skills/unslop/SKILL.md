@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Cut AI tells from any writing.
+description: Cut AI tells and padding from any writing.
 disable-model-invocation: true
 ---
 
@@ -60,3 +60,13 @@ Rule numbers are stable ids that other skills cite. A removed rule leaves a gap.
 31. **Prefer the plain word.** "utilize" and "leverage" become "use", "facilitate" becomes "help", "numerous" becomes "many", "in the event that" becomes "if". The fancier synonym is rarely clearer.
 32. **Mannered prose.** Metaphor or flourish where a literal phrase exists: aphorisms ("wire it or delete it"), rhetorical fragments for effect, personified code ("the plan holds it"), figurative verbs ("rides along", "stands on"), stock framing phrases. "A dial worth turning" becomes "a parameter worth varying". Say what you mean. Rule 26 covers the metaphor nouns.
 33. **Over-compression.** Dropped articles, verbless fragments, symbol-speak, and abbreviations that make the reader decode instead of read. "Parser rejects bad date → exit 2, no write" becomes "The parser rejects a bad date, exits with code 2, and writes nothing." Write whole sentences with their articles and verbs, and spell out arrows and abbreviations.
+
+### Length and focus
+
+34. **Answer first.** Put the answer, conclusion, or decision the reader needs in the first line. Background comes after it, if at all.
+35. **Cut what the reader doesn't need.** Keep only what the reader needs to act or decide. A status update says what changed and what needs the reader, in a few bullets. Commit hashes, test counts, and per-item detail stay in the report or file where they already live.
+36. **Short replies.** A chat reply fits on one screen unless the reader asked for more. Prefer a short list to paragraphs.
+
+### Writing as the user
+
+37. **Speak as the user, not as a teammate.** In text sent under the user's name (Slack, GitHub, email), don't write "we" or "our" as if the agent were on the team. Use the user's voice ("my branch") or name the thing neutrally ("the `release` branch"). Check every pronoun and possessive before sending.
