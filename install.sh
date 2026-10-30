@@ -15,8 +15,11 @@ for dir in "$repo"/skills/*/; do
   link "$repo/skills/$name" ~/.claude/skills/"$name"
   link "$repo/skills/$name" ~/.codex/skills/"$name"
 done
-link "$repo/AGENTS.md" ~/.claude/CLAUDE.md
-link "$repo/AGENTS.md" ~/.codex/AGENTS.md
+# Global instructions: AGENTS.md plus the unslop rules, so the rules live only in the skill.
+mkdir -p "$repo/.generated"
+{ cat "$repo/AGENTS.md"; echo; sed -n '/^## Patterns to detect and fix/,$p' "$repo/skills/unslop/SKILL.md"; } > "$repo/.generated/AGENTS.md"
+link "$repo/.generated/AGENTS.md" ~/.claude/CLAUDE.md
+link "$repo/.generated/AGENTS.md" ~/.codex/AGENTS.md
 link "$repo/hooks/babysit-new-pr.sh" ~/.claude/hooks/babysit-new-pr.sh
 
 # Register the new-PR hook in Claude Code settings if it is missing.
