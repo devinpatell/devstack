@@ -24,7 +24,7 @@ A Lattice prototype (`lattice.dxd.amazon.dev/p/<slug>/...`) runs from its source
 
 For any other Midway-protected page, read it with builder-mcp `ReadInternalWebsites`. If that can't read it, use `mcurl`.
 
-If a clone fails or `mcurl` returns 401, my Midway session has expired or I'm off the VPN. Ask me to run `mwinit` and wait. Don't fall back to the browser.
+If a clone fails or `mcurl` returns 401, my Midway session has expired. Ask me to run `mwinit -f`, wait until I say it has run, then retry. Don't fall back to the browser.
 
 ## Write without AI tells
 
