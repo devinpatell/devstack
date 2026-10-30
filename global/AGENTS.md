@@ -1,6 +1,8 @@
 # Global agent instructions
 
-Deployed from dstack (`global/AGENTS.md` plus the rules from `skills/unslop/SKILL.md`) to `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`.
+## Changing skills or these instructions
+
+My skills, hooks, and these instructions come from my dstack repo at `{{dstack}}` (github.com/devinpatell/dstack). When I ask to add or change any of them, edit dstack, commit and push, then run `{{dstack}}/install.sh`. Never edit the installed copies in `~/.claude` or `~/.codex` directly.
 
 ## Write without AI tells
 

@@ -17,7 +17,7 @@ for dir in "$repo"/skills/*/; do
 done
 # Global instructions: global/AGENTS.md plus the unslop rules, so the rules live only in the skill.
 mkdir -p "$repo/.generated"
-{ cat "$repo/global/AGENTS.md"; echo; sed -n '/^## Patterns to detect and fix/,$p' "$repo/skills/unslop/SKILL.md"; } > "$repo/.generated/AGENTS.md"
+{ sed "s|{{dstack}}|$repo|g" "$repo/global/AGENTS.md"; echo; sed -n '/^## Patterns to detect and fix/,$p' "$repo/skills/unslop/SKILL.md"; } > "$repo/.generated/AGENTS.md"
 link "$repo/.generated/AGENTS.md" ~/.claude/CLAUDE.md
 link "$repo/.generated/AGENTS.md" ~/.codex/AGENTS.md
 link "$repo/hooks/babysit-new-pr.sh" ~/.claude/hooks/babysit-new-pr.sh
