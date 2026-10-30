@@ -9,6 +9,7 @@ My agent skills and global instructions for Claude Code and Codex.
 | `babysit-pr` | "babysit" (or automatic after `gh pr create`) | Watches a PR. Fixes CI and keeps the branch current on its own. Triages review feedback but acts only on written approval. Asks about auto-merge once, and reports when the PR is ready to merge. |
 | `better-call-sol` | "better call sol" | Reviews a change with GPT Sol in a loop until both agents agree. |
 | `leaving-pr-comments` | (automatic) | Formats and unslops comments posted on my behalf. |
+| `walkthrough` | "walk me through", "step by step" | Explains anything one step at a time in plain words, and waits for my explicit consent before each next step. |
 | `unslop` | `/unslop` | Removes AI writing patterns from text. |
 
 `AGENTS.md` holds the global instructions, currently the unslop rules, so every reply in both tools follows them. Those rules are a copy of `skills/unslop/SKILL.md`. Update both when a rule changes.
