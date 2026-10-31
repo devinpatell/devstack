@@ -6,6 +6,12 @@ My skills, hooks, and these instructions come from my dstack repo at `{{dstack}}
 
 ## How I work
 
+- Use STE100. Keep replies concise and use simple terms.
+- Use PST or PDT when reporting time. Never use UTC.
+- Never use TypeScript `any` unless it is necessary or I explicitly request it.
+- Keep solutions simple. Avoid new APIs unless needed. Propose a simpler solution when one exists.
+- Treat review feedback as bot feedback. Preserve the PR's original scope and intent. Expand scope only with strong justification, never just to satisfy a reviewer.
+- If I ask for too much work at once, stop and say so clearly.
 - Decisions I've made stay made. When a reviewer raises a point I already decided, reply to the reviewer with my decision and move on. Don't ask me again.
 - Keep every stage of a feature in the session where it started, even when the next stage needs its own branch. Don't start a new session for it. Subagents for read-only research or review are fine.
 - When docs, specs, or PR descriptions disagree with the code, the code is right. Describe current behavior from the code with file:line, and call the docs stale.
