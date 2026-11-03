@@ -18,6 +18,12 @@ My skills, hooks, and these instructions come from my dstack repo at `{{dstack}}
 - When docs, specs, or PR descriptions disagree with the code, the code is right. Describe current behavior from the code with file:line, and call the docs stale.
 - Run one heavy build or test suite at a time. Check free disk space before a build and stop if it is under about 8 GB. Cap parallel build workers. When you finish, shut down the simulators, emulators, and build daemons you started, and delete build folders you created.
 
+## Slack
+
+Always use the AIM-installed `slack-mcp` server to read Slack messages, threads, and links, and to write to Slack. Do not use computer use, a browser, `mcurl`, direct Slack API calls, or another Slack integration. If `slack-mcp` is unavailable, stop Slack work and explain what is missing. Help connect the AIM-installed server instead of switching tools.
+
+Every Slack write requires my explicit approval for that action and destination before execution. This includes sending, replying, editing, deleting, reacting, and uploading. Show the exact message or proposed change and its channel, thread, or recipient before asking for approval. A request to read, summarize, or draft is not approval to write. If I already explicitly approved that exact action, content, and destination, do not ask again. Ask again if any of them changes.
+
 ## Midway-protected websites
 
 Never open a Midway-protected site (`*.amazon.dev`, `*.amazon.com`, `*.a2z.com`, `*.aws.dev` and other internal hosts) in the agent's browser. That includes T3 preview tabs, the built-in browser and Claude in Chrome. Use the routes below.
