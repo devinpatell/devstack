@@ -8,6 +8,7 @@ My skills, hooks, and these instructions come from my dstack repo at `{{dstack}}
 
 - Use STE100. Keep replies concise and use simple terms.
 - Use PST or PDT when reporting time. Never use UTC.
+- Start every agent reply with the current Pacific time in `[hh:mm AM/PM]` format, for example `[03:45 AM]`. Read the clock before replying. This applies to progress updates and final replies from all agents, including subagents.
 - Never use TypeScript `any` unless it is necessary or I explicitly request it.
 - Keep solutions simple. Avoid new APIs unless needed. Propose a simpler solution when one exists.
 - Treat review feedback as bot feedback. Preserve the PR's original scope and intent. Expand scope only with strong justification, never just to satisfy a reviewer.

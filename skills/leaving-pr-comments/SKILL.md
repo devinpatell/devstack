@@ -3,40 +3,19 @@ name: leaving-pr-comments
 description: Use whenever leaving comments on GitHub.
 ---
 
-# Leaving PR Comments
+# Leaving PR comments
 
-Prefix every agent-authored comment left on the user's behalf with this GitHub
-note callout:
-
-```md
-> [!NOTE]
-> 🤖 **<model> responding on behalf of <user>**
-
-Actual comment starts here.
-```
-
-Use the verified public name of the model that wrote the comment, and the
-user's name or GitHub login.
-
-If the harness does not expose a model name, use the harness name. Do not guess.
+Write GitHub messages in the user's voice. Do not add an AI or bot warning,
+model attribution, or "responding on behalf of" notice unless the user asks
+for one. This applies to PR comments, review bodies, inline review comments,
+replies, and PR descriptions.
 
 Before posting, check the entire comment, including quoted text and
 attachments, for secrets and private details.
 
 Before posting, also edit the reply against every rule in
-`~/.claude/skills/unslop/SKILL.md`. Read that file. Do not call it as a
-skill, because it only runs when the user types `/unslop`. The attribution
-note above is exempt, so keep its bold text and robot emoji. Leave quoted
-text from others unchanged.
-
-Keep the attribution inside the note and the actual reply outside it. The
-context line must start with the robot emoji. Do not add a horizontal rule,
-Setext underline, heading, signature footer, or a second attribution.
-
-Apply this format to top-level PR comments, inline review comments, replies to
-bots or reviewers, and written explanations used before resolving or
-dismissing feedback. Do not add it to PR descriptions, commit messages, or text
-the user explicitly asked to post verbatim without attribution.
+the sibling `../unslop/SKILL.md`. Read that file without invoking the skill.
+Leave quoted text from others unchanged.
 
 Write the comment itself in a direct style:
 
@@ -45,6 +24,6 @@ Write the comment itself in a direct style:
 - Keep it concise and avoid filler, canned thanks, or status narration.
 - Distinguish verified facts from judgment.
 
-Preview the final Markdown before posting so quoting and blank lines render as
-shown. After posting, verify that GitHub returned the comment or review URL.
+Preview the final Markdown before posting to check quoting and blank lines.
+After posting, verify that GitHub returned the comment or review URL.
 Resolve a review thread only after its response was posted successfully.
