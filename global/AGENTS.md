@@ -39,6 +39,18 @@ For any other Midway-protected page, read it with builder-mcp `ReadInternalWebsi
 
 If a clone fails with "Could not resolve hostname git.amazon.com", ssh isn't going through WSSH. Check that `/usr/local/bin/wssh` exists and `~/.ssh/config` has the WSSH block. If either is missing, ask me to install WSSH from Self Service. Any other clone failure, or `mcurl` returning 401, means my Midway session has expired. Ask me to run `mwinit -f`. In both cases, wait until I say it's done, then retry. Don't fall back to the browser.
 
+## Noor and Lobster
+
+Lobster's named installations and their AWS accounts:
+
+| Stage | Admin portal | Concierge portal | AWS account |
+|---|---|---|---|
+| Beta | https://admin.lobster-beta.spidernoor.com | https://concierge.lobster-beta.spidernoor.com | lobster-beta (110283916939) |
+| Gamma | https://admin.lobster-gamma.spidernoor.com | https://concierge.lobster-gamma.spidernoor.com | lobster-gamma (737768335498) |
+| Prod | https://admin.lobster-prod.spidernoor.com | https://concierge.lobster-prod.spidernoor.com | lobster-production (939022200919) |
+
+For an account-agnostic AWS call, such as the IAM policy simulator, refresh credentials against lobster-beta: `ada credentials update --once --provider conduit --role IibsAdminAccess-DO-NOT-DELETE --account 110283916939`. Never pick Prod for that.
+
 ## GitHub
 
 To put screenshots or recordings in a PR description or comment, attach them with `gh`. Don't use a browser upload, and don't commit the files. Use `gh pr create`, `gh pr edit` or `gh pr comment` with `--attach <path>` once per file. When the body already has `![alt](<path>)` for an attached file, `gh` swaps that path for the uploaded URL and keeps the alt text. Files the body doesn't mention go at the end of the body. Paths in a `--body-file` resolve from that file's directory. Check the body afterward for `user-attachments` URLs.
