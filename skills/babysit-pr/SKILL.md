@@ -138,10 +138,14 @@ When triage is done, bring the user into the thread:
 1. Post the triage as a compact table: id, author, location, claim, class,
    recommendation.
 2. Ask how to proceed with the harness's question tool (`AskUserQuestion` in
-   Claude Code) so the thread shows that it waits on the user. Put the PR
-   link and the item ids in the question. Options, in order: "Walk me
-   through each item", "Apply my recommendations (<ids>)", "Fix only the
-   Fix items", "Do nothing for now". The user can pick Other to name items.
+   Claude Code) so the thread shows that it waits on the user. While the
+   question is open, some harnesses show only the question, not the table
+   above it. Make the question stand on its own: the PR link, then one line
+   per item with its id, one-line claim, class and recommendation. With
+   many items, keep one short line each and say the full table is in your
+   last message. Options, in order: "Walk me through each item", "Apply my
+   recommendations (<ids>)", "Fix only the Fix items", "Do nothing for now".
+   The user can pick Other to name items.
 3. Without a question tool, end your turn with the triage table and the
    same options at the top of your message.
 
@@ -164,7 +168,9 @@ Then stop and let the user ask questions. Answer them, reading more code or
 running checks when that settles the question. Change nothing during the
 walkthrough. When the user is ready, record one decision for the item with
 the question tool: "Implement", "Implement differently" (the user says
-how), "Rebut", or "Ignore". Then move to the next item.
+how), "Rebut", or "Ignore". The question restates the item's id, claim and
+your recommendation in one line, because the user may not see your
+explanation while the question is open. Then move to the next item.
 
 After the last item, show a summary of all decisions and implement the
 approved ones together, as described below. Do not open issues or PRs for
