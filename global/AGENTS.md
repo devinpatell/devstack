@@ -2,7 +2,7 @@
 
 ## Changing skills or these instructions
 
-My skills, hooks, and these instructions come from my dstack repo at `{{dstack}}` (github.com/devinpatell/dstack). When I ask to add or change any of them, edit dstack, commit and push, then run `{{dstack}}/install.sh`. Never edit the installed copies in `~/.claude` or `~/.codex` directly.
+My skills, hooks, and these instructions come from my devstack repo at `{{devstack}}` (github.com/devinpatell/devstack). When I ask to add or change any of them, edit devstack, commit and push, then run `{{devstack}}/install.sh`. Never edit the installed copies in `~/.claude` or `~/.codex` directly.
 
 ## How I work
 

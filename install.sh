@@ -1,5 +1,5 @@
 #!/bin/bash
-# Link dstack into Claude Code and Codex. Safe to run again.
+# Link devstack into Claude Code and Codex. Safe to run again.
 set -euo pipefail
 repo="$(cd "$(dirname "$0")" && pwd)"
 
@@ -17,7 +17,7 @@ for dir in "$repo"/skills/*/; do
 done
 # Global instructions: global/AGENTS.md plus the unslop rules, so the rules live only in the skill.
 mkdir -p "$repo/.generated"
-{ sed "s|{{dstack}}|$repo|g" "$repo/global/AGENTS.md"; echo; sed -n '/^## Patterns to detect and fix/,$p' "$repo/skills/unslop/SKILL.md"; } > "$repo/.generated/AGENTS.md"
+{ sed "s|{{devstack}}|$repo|g" "$repo/global/AGENTS.md"; echo; sed -n '/^## Patterns to detect and fix/,$p' "$repo/skills/unslop/SKILL.md"; } > "$repo/.generated/AGENTS.md"
 link "$repo/.generated/AGENTS.md" ~/.claude/CLAUDE.md
 link "$repo/.generated/AGENTS.md" ~/.codex/AGENTS.md
 link "$repo/hooks/babysit-new-pr.sh" ~/.claude/hooks/babysit-new-pr.sh
@@ -31,4 +31,4 @@ if ! grep -q babysit-new-pr.sh "$settings"; then
   mv "$tmp" "$settings"
 fi
 
-echo "dstack linked from $repo"
+echo "devstack linked from $repo"

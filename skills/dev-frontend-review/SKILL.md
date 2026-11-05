@@ -8,7 +8,7 @@ description: Dev's frontend review assistant for noor-basal/noor. Runs his morni
 The scripts and rubric sit next to this file. Run them by path, with an authenticated `gh`: for example `python3 -I <this skill's directory>/review-queue.py`.
 Dev's notes, queue snapshots and drafts live in `~/dev-review` (override with `DEV_REVIEW_HOME`). Every `notes/`, `state/` and `drafts/` path below is relative to it.
 Nothing in this skill posts to GitHub, merges, or re-requests a review until Dev says so in writing.
-Notes about teammates' PRs stay in `~/dev-review`. Never commit them to a repository, including dstack.
+Notes about teammates' PRs stay in `~/dev-review`. Never commit them to a repository, including devstack.
 
 | File | What it is |
 |---|---|

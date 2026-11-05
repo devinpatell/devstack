@@ -1,4 +1,4 @@
-# dstack
+# devstack
 
 My agent skills and global instructions for Claude Code and Codex.
 
@@ -22,8 +22,8 @@ The root `AGENTS.md` (loaded by `CLAUDE.md`) holds the instructions for agents w
 ## Install
 
 ```bash
-gh repo clone devinpatell/dstack ~/workplace/dstack
-~/workplace/dstack/install.sh
+gh repo clone devinpatell/devstack ~/workplace/devstack
+~/workplace/devstack/install.sh
 ```
 
 The script symlinks each skill into `~/.claude/skills` and `~/.codex/skills`, links the generated `AGENTS.md` to `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md`, and registers the hook in `~/.claude/settings.json`. If a real file is already at one of those paths, the script renames it to `*.bak.<time>` first.

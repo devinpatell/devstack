@@ -1,11 +1,11 @@
-# dstack
+# devstack
 
 This repo holds my agent skills and global instructions for Claude Code and Codex. These instructions are for agents working on the repo itself. The global instructions deployed to every laptop are in `global/AGENTS.md`.
 
 ## Layout
 
 - `skills/<name>/SKILL.md`: one directory per skill, with any helper files next to it.
-- `global/AGENTS.md`: the global instructions, without the unslop rules. `install.sh` replaces `{{dstack}}` with the path to this clone.
+- `global/AGENTS.md`: the global instructions, without the unslop rules. `install.sh` replaces `{{devstack}}` with the path to this clone.
 - `hooks/`: Claude Code hooks. `install.sh` registers them in `~/.claude/settings.json`.
 - `install.sh`: links skills and hooks into `~/.claude` and `~/.codex`, and builds `.generated/AGENTS.md`.
 - `licenses/`: MIT notices for skills that came from tstack and pstack. Keep them.
