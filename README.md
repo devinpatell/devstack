@@ -8,6 +8,7 @@ My agent skills and global instructions for Claude Code and Codex.
 |---|---|---|
 | `babysit-pr` | "babysit" (or automatic after `gh pr create`) | Watches a PR. Fixes CI and keeps the branch current on its own. Triages review feedback but acts only on written approval. Asks about auto-merge once, and reports when the PR is ready to merge. |
 | `better-call-sol` | "better call sol" | Reviews a change with GPT Sol in a loop until both agents agree. |
+| `council` | "council" | Gets a review or feedback from two delegates, Claude Opus and GPT Sol, in parallel. Loops on fixes until both are satisfied, and puts their scores in the PR description. |
 | `dev-frontend-review` | "digest", "review #N", "note for #N", "visual check #N" | Drafts my frontend reviews for noor-basal/noor: a weekday digest of open PRs, re-review drafts, and the PR branch run next to its prototype. Posts nothing without my approval. Notes and drafts stay in `~/dev-review`, outside the repo. |
 | `leaving-pr-comments` | (automatic) | Formats and unslops comments posted on my behalf. |
 | `walkthrough` | "walk me through", "step by step" | Explains anything one step at a time in plain words, and waits for my explicit consent before each next step. |
@@ -37,4 +38,4 @@ Skill edits take effect right away, because the installed files are links. Run `
 
 ## Credits
 
-`babysit-pr`, `leaving-pr-comments`, and `better-call-sol` (from `sol-loop`) started from [tstack](https://github.com/t3dotgg/tstack) at commit `1085050` by Theo Browne. `unslop` is from [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan. Both are MIT licensed. See `licenses/`.
+`babysit-pr`, `council`, `leaving-pr-comments`, and `better-call-sol` (from `sol-loop`) started from [tstack](https://github.com/t3dotgg/tstack) at commit `1085050` by Theo Browne. `council` drops Gemini Pro from the original three-member council. `unslop` is from [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan. Both are MIT licensed. See `licenses/`.
