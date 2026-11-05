@@ -66,7 +66,7 @@ After Dev posts a review, read it and add any new standing decision to `notes/de
 6. **Visual check:** for a UI change, follow `VISUAL-CHECK.md` and add its findings to the draft.
 7. Write the draft to `drafts/<N>/review.md` in the shape at the end of the rubric. Every blocking item has `file:line` and the exact fix. Mark anything you inferred but didn't verify. If the PR needs more than one round, also draft the acceptance-criteria comment.
 8. List the direction questions separately. Don't decide them in the draft, so the review doesn't need a later "Correction".
-9. Stop. Post only after Dev approves the draft, with `[dev's agent]` at the start of the body, as his earlier agent-posted reviews have.
+9. Stop. Post only after Dev approves the draft.
 
 ## Mode 4: finish visuals
 
